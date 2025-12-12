@@ -5,7 +5,7 @@ import time
 url='https://www.bilibili.com'
 header={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
 
-path='db/dicc.txt' #文件路径
+path= '../db/dicc.txt'  #文件路径
 #按照行读取文件内容返回行的内容
 def read_files(file_path):
 	lines=[]
@@ -25,7 +25,6 @@ def join_url(url,word):
 
 #根据完整的url获取网页内容返回status_code
 def fetch_data(url_all):
-	time.sleep(0.5)
 	response = requests.get(url_all,headers=header,timeout=5)
 	return response.status_code
 
